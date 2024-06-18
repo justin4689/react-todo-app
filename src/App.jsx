@@ -14,9 +14,11 @@ function App() {
     }
 
     function handleAddTodo(newTodo) {
+      if (newTodo.trim() !== "") {
         const newTodoList = [...todos, newTodo];
         persist(newTodoList);
         setTodos(newTodoList);
+    }
     }
 
     function handleDeleteTodo(index) {
